@@ -1,5 +1,5 @@
 <div class="container" data-controller="refresh-list-auto">
-  <div class="searchBar row justify-content-center" >
+  <div class="searchBar row justify-content-center mt-3" >
     <%= form_with url: countries_path, method: :get, html: { class: 'mb-5', data: { refresh_list_auto_target: 'form' } } do |f| %>
     <%= f.text_field :query,
                      class: "form-control",
@@ -11,7 +11,7 @@
                     } %>
   <% end %>
   </div>
-  <h3 class="mt-4"><%= pluralize(@countries.size, 'country') %>  available</h3>
+  <h3 ><%= pluralize(@countries.size, 'country') %>  available</h3>
 
     <%= render 'list', countries: @countries %>
 

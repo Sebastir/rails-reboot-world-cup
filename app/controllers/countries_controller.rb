@@ -8,7 +8,7 @@ class CountriesController < ApplicationController
     end
     respond_to do |format|
       format.html # Follow regular flow of Rails
-      format.text { render partial: 'list.html', locals: { countries: @countries } }
+      format.text { render partial: 'countries/list', locals: { countries: @countries }, formats: [:html] }
     end
   end
 end

@@ -1,8 +1,15 @@
-<div class="winners" data-refresh-list-auto-target="list">
-   <% countries.each do |country| %>
-    <div class="winner">
+<div  data-refresh-list-auto-target="list">
+  <% if params[:query].blank? %>
+    <h1 class="h3"><%= pluralize @countries.count, 'country' %> available</h1>
+  <% else %>
+    <h1 class="h3"><%= pluralize @countries.count, 'result' %> for <code><%= params[:query] %></code></h1>
+  <% end %>
+  <div class="winners">
+      <% countries.each do |country| %>
+      <div class="winner">
       <%= image_tag(country.image_url)%>
       <h2 class="winner-tag"> <%= country.name %> | <%= country.year %></h2>
       </div>
       <% end %>
+      </div>
   </div>
